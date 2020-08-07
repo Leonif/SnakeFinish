@@ -8,26 +8,34 @@
 
 /* Begin PBXBuildFile section */
 		796298B724DDB407006A9A9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796298B624DDB407006A9A9A /* AppDelegate.swift */; };
-		796298B924DDB407006A9A9A /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 796298B824DDB407006A9A9A /* GameScene.sks */; };
-		796298BB24DDB407006A9A9A /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 796298BA24DDB407006A9A9A /* Actions.sks */; };
 		796298BD24DDB407006A9A9A /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796298BC24DDB407006A9A9A /* GameScene.swift */; };
 		796298BF24DDB407006A9A9A /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796298BE24DDB407006A9A9A /* GameViewController.swift */; };
 		796298C224DDB407006A9A9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 796298C024DDB407006A9A9A /* Main.storyboard */; };
 		796298C424DDB40A006A9A9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 796298C324DDB40A006A9A9A /* Assets.xcassets */; };
 		796298C724DDB40A006A9A9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 796298C524DDB40A006A9A9A /* LaunchScreen.storyboard */; };
+		796298CF24DDB54E006A9A9A /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796298CE24DDB54E006A9A9A /* CircleButton.swift */; };
+		796298D224DDB84C006A9A9A /* Apple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796298D124DDB84C006A9A9A /* Apple.swift */; };
+		796298D424DDC00F006A9A9A /* Snake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796298D324DDC00F006A9A9A /* Snake.swift */; };
+		796298D624DDC071006A9A9A /* SnakeBodyPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796298D524DDC071006A9A9A /* SnakeBodyPart.swift */; };
+		796298D824DDC13A006A9A9A /* SnakeHead.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796298D724DDC13A006A9A9A /* SnakeHead.swift */; };
+		796298DA24DDD19A006A9A9A /* CategoryBitMasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796298D924DDD19A006A9A9A /* CategoryBitMasks.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		796298B324DDB407006A9A9A /* SnakeFinish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnakeFinish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		796298B624DDB407006A9A9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		796298B824DDB407006A9A9A /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		796298BA24DDB407006A9A9A /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		796298BC24DDB407006A9A9A /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		796298BE24DDB407006A9A9A /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		796298C124DDB407006A9A9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		796298C324DDB40A006A9A9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		796298C624DDB40A006A9A9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		796298C824DDB40A006A9A9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		796298CE24DDB54E006A9A9A /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
+		796298D124DDB84C006A9A9A /* Apple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apple.swift; sourceTree = "<group>"; };
+		796298D324DDC00F006A9A9A /* Snake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snake.swift; sourceTree = "<group>"; };
+		796298D524DDC071006A9A9A /* SnakeBodyPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnakeBodyPart.swift; sourceTree = "<group>"; };
+		796298D724DDC13A006A9A9A /* SnakeHead.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnakeHead.swift; sourceTree = "<group>"; };
+		796298D924DDD19A006A9A9A /* CategoryBitMasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryBitMasks.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,9 +69,9 @@
 			isa = PBXGroup;
 			children = (
 				796298B624DDB407006A9A9A /* AppDelegate.swift */,
-				796298B824DDB407006A9A9A /* GameScene.sks */,
-				796298BA24DDB407006A9A9A /* Actions.sks */,
 				796298BC24DDB407006A9A9A /* GameScene.swift */,
+				796298D924DDD19A006A9A9A /* CategoryBitMasks.swift */,
+				796298D024DDB835006A9A9A /* Objects */,
 				796298BE24DDB407006A9A9A /* GameViewController.swift */,
 				796298C024DDB407006A9A9A /* Main.storyboard */,
 				796298C324DDB40A006A9A9A /* Assets.xcassets */,
@@ -71,6 +79,18 @@
 				796298C824DDB40A006A9A9A /* Info.plist */,
 			);
 			path = SnakeFinish;
+			sourceTree = "<group>";
+		};
+		796298D024DDB835006A9A9A /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				796298CE24DDB54E006A9A9A /* CircleButton.swift */,
+				796298D324DDC00F006A9A9A /* Snake.swift */,
+				796298D724DDC13A006A9A9A /* SnakeHead.swift */,
+				796298D524DDC071006A9A9A /* SnakeBodyPart.swift */,
+				796298D124DDB84C006A9A9A /* Apple.swift */,
+			);
+			path = Objects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -132,10 +152,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				796298C224DDB407006A9A9A /* Main.storyboard in Resources */,
-				796298B924DDB407006A9A9A /* GameScene.sks in Resources */,
 				796298C424DDB40A006A9A9A /* Assets.xcassets in Resources */,
 				796298C724DDB40A006A9A9A /* LaunchScreen.storyboard in Resources */,
-				796298BB24DDB407006A9A9A /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,7 +166,13 @@
 			files = (
 				796298BD24DDB407006A9A9A /* GameScene.swift in Sources */,
 				796298BF24DDB407006A9A9A /* GameViewController.swift in Sources */,
+				796298D624DDC071006A9A9A /* SnakeBodyPart.swift in Sources */,
+				796298D424DDC00F006A9A9A /* Snake.swift in Sources */,
 				796298B724DDB407006A9A9A /* AppDelegate.swift in Sources */,
+				796298DA24DDD19A006A9A9A /* CategoryBitMasks.swift in Sources */,
+				796298CF24DDB54E006A9A9A /* CircleButton.swift in Sources */,
+				796298D824DDC13A006A9A9A /* SnakeHead.swift in Sources */,
+				796298D224DDB84C006A9A9A /* Apple.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
