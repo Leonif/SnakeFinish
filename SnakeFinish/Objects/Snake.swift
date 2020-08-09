@@ -47,7 +47,7 @@ class Snake: SKShapeNode {
     }
     
     private func moveBodyParts(_ p1: SnakeBodyPart, _ p2: SnakeBodyPart) {
-        let moveAction = SKAction.move(to: CGPoint(x: p1.position.x, y: p1.position.y), duration: 1.0)
+        let moveAction = SKAction.move(to: CGPoint(x: p1.position.x, y: p1.position.y), duration: 0.3)
         
         p2.run(moveAction)
     }
