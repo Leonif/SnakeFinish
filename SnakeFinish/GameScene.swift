@@ -85,28 +85,31 @@ class GameScene: SKScene {
         }
     }
     
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-
-    }
-    
-    
     override func update(_ currentTime: TimeInterval) {
         snake?.move()
     }
 }
 
-
 extension GameScene: SKPhysicsContactDelegate {
     func didBegin(_ contact: SKPhysicsContact) {
         
-        guard
-            let apple = contact.bodyA.node as? Apple,
-            let head = contact.bodyB.node as? SnakeHead else { return }
+        let aMask = contact.bodyA.categoryBitMask
+        let bMask = contact.bodyB.categoryBitMask
         
-        snake?.addBodyPart()
-        apple.removeFromParent()
+        switch (aMask, bMask) {
+        case (CategoryBitMasks.apple.rawValue, CategoryBitMasks.snakeHead.rawValue):
+            snake?.addBodyPart()
+            let apple = contact.bodyA.node
+            apple?.removeFromParent()
+            
+            let newApple = makeApple()
+            addChild(newApple)
+        default:
+            break
+        }
         
-        let newApple = makeApple()
-        addChild(newApple)
+        
+        
+        
     }
 }

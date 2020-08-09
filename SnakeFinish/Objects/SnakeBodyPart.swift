@@ -28,7 +28,7 @@ class SnakeBodyPart: SKShapeNode {
         name = "snakeBodyPart"
         
         let physicsCenter = CGPoint(x: diameter / 2, y: diameter / 2)
-        physicsBody = SKPhysicsBody(circleOfRadius: diameter, center: physicsCenter)
+        physicsBody = SKPhysicsBody(circleOfRadius: diameter - 4, center: physicsCenter)
         physicsBody?.isDynamic = true
         physicsBody?.categoryBitMask = CategoryBitMasks.snakeBodyPart.rawValue
         physicsBody?.contactTestBitMask = CategoryBitMasks.apple.rawValue
