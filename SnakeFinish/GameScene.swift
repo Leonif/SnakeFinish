@@ -20,6 +20,8 @@ class GameScene: SKScene {
         physicsWorld.gravity = CGVector(dx: 0, dy: 0)
         physicsBody = SKPhysicsBody(edgeLoopFrom: frame)
         physicsBody?.allowsRotation = false
+        physicsBody?.categoryBitMask = CategoryBitMasks.edgeBody.rawValue
+        physicsBody?.categoryBitMask = CategoryBitMasks.snakeHead.rawValue | CategoryBitMasks.snakeHead.rawValue
         
         view.showsPhysics = true
         
@@ -102,6 +104,8 @@ extension GameScene: SKPhysicsContactDelegate {
         guard
             let apple = contact.bodyA.node as? Apple,
             let head = contact.bodyB.node as? SnakeHead else { return }
+        
+       // а вот тут не получатся сделать через guard. комировать и подсматривать не стал.
         
         snake?.addBodyPart()
         apple.removeFromParent()
