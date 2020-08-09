@@ -15,7 +15,7 @@ class SnakeHead: SnakeBodyPart {
         
         physicsBody?.categoryBitMask = CategoryBitMasks.snakeHead.rawValue
         
-        physicsBody?.contactTestBitMask = CategoryBitMasks.snakeBodyPart.rawValue | CategoryBitMasks.apple.rawValue
+        physicsBody?.contactTestBitMask = CategoryBitMasks.apple.rawValue
         
     }
     
@@ -23,5 +23,5 @@ class SnakeHead: SnakeBodyPart {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // test2
+    // test 22
 }
