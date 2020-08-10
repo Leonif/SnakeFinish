@@ -13,6 +13,40 @@ class GameScene: SKScene {
     
     var snake: Snake?
     
+    private func startGame() {
+        let apple = makeApple()
+        addChild(apple)
+        
+        let snakePoint = CGPoint(x: frame.midX + 50, y: frame.midY)
+        snake = Snake(position: snakePoint)
+        addChild(snake!)
+    }
+    
+    private func restartGame() {
+        if let snake = snake {
+            snake.removeFromParent()
+        }
+        removeApple()
+        
+        startGame()
+    }
+    
+    private func removeApple() {
+        enumerateChildNodes(withName: "Apple") { (node, stop) in
+            node.removeFromParent()
+        }
+    }
+
+    private func buildControlls() {
+        let leftButtonPoint = CGPoint(x: frame.minX + 30, y: frame.minY + 30)
+        let leftButton = CircleButton(position: leftButtonPoint, name: "leftButton")
+        addChild(leftButton)
+        
+        let rightButtonPoint = CGPoint(x: frame.maxX - (45 + 30), y: frame.minY + 30)
+        let righButton = CircleButton(position: rightButtonPoint, name: "rightButton")
+        addChild(righButton)
+    }
+    
     override func didMove(to view: SKView) {
         backgroundColor = .black
         
@@ -23,22 +57,8 @@ class GameScene: SKScene {
         
         view.showsPhysics = true
         
-        let leftButtonPoint = CGPoint(x: frame.minX + 30, y: frame.minY + 30)
-        let leftButton = CircleButton(position: leftButtonPoint, name: "leftButton")
-        addChild(leftButton)
-        
-        
-        let rightButtonPoint = CGPoint(x: frame.maxX - (45 + 30), y: frame.minY + 30)
-        let righButton = CircleButton(position: rightButtonPoint, name: "rightButton")
-        addChild(righButton)
-        
-        
-        let apple = makeApple()
-        addChild(apple)
-        
-        let snakePoint = CGPoint(x: frame.midX + 50, y: frame.midY)
-        snake = Snake(position: snakePoint)
-        addChild(snake!)
+        buildControlls()
+        startGame()
     }
     
     
@@ -46,7 +66,15 @@ class GameScene: SKScene {
         let applePoint = CGPoint(x: CGFloat.random(in: 0...frame.maxX), y: CGFloat.random(in: 45...frame.maxY))
         return Apple(position: applePoint)
     }
-
+    
+    private func isNodeOutOfBounds(node: SKNode) -> Bool {
+        let bottomLeft = CGPoint(x: frame.minX, y: frame.minY)
+        let topRight = CGPoint(x: frame.maxX, y: frame.maxY)
+        
+        let outOfBounds =  node.position.x < bottomLeft.x || node.position.x >= topRight.x || node.position.y < bottomLeft.y || node.position.y >= topRight.y
+        
+        return outOfBounds
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 
@@ -89,8 +117,12 @@ class GameScene: SKScene {
 
     }
     
-    
     override func update(_ currentTime: TimeInterval) {
+        if let snake = snake, isNodeOutOfBounds(node: snake.getHead()) {
+            restartGame()
+            return
+        }
+        
         snake?.move()
     }
 }
