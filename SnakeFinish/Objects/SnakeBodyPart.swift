@@ -38,4 +38,9 @@ class SnakeBodyPart: SKShapeNode {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func displayAsHead() {
+        fillColor = .yellow
+        strokeColor = .yellow
+    }
 }

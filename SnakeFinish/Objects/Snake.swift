@@ -19,6 +19,7 @@ class Snake: SKShapeNode {
         self.init()
         
         let head = SnakeHead(position: position)
+        head.displayAsHead()
         body.append(head)
         addChild(head)
     }
@@ -69,6 +70,10 @@ class Snake: SKShapeNode {
         body.append(newBodyPart)
         addChild(newBodyPart)
         
+    }
+    
+    func getHead() -> SKNode {
+        return body.first!
     }
 }
 
