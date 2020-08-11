@@ -15,7 +15,8 @@ class SnakeHead: SnakeBodyPart {
         
         physicsBody?.categoryBitMask = CategoryBitMasks.snakeHead.rawValue
         
-        physicsBody?.contactTestBitMask = CategoryBitMasks.snakeBodyPart.rawValue | CategoryBitMasks.apple.rawValue
+        physicsBody?.contactTestBitMask = CategoryBitMasks.apple.rawValue
+        
         
     }
     

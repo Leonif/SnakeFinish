@@ -21,6 +21,8 @@ class GameScene: SKScene {
         physicsBody = SKPhysicsBody(edgeLoopFrom: frame)
         physicsBody?.allowsRotation = false
         
+        
+        
         view.showsPhysics = true
         
         let leftButtonPoint = CGPoint(x: frame.minX + 30, y: frame.minY + 30)
@@ -40,6 +42,8 @@ class GameScene: SKScene {
         snake = Snake(position: snakePoint)
         addChild(snake!)
     }
+    
+    
     
     
     private func makeApple() -> Apple {
@@ -99,14 +103,19 @@ class GameScene: SKScene {
 extension GameScene: SKPhysicsContactDelegate {
     func didBegin(_ contact: SKPhysicsContact) {
         
-        guard
-            let apple = contact.bodyA.node as? Apple,
-            let head = contact.bodyB.node as? SnakeHead else { return }
-        
-        snake?.addBodyPart()
-        apple.removeFromParent()
-        
-        let newApple = makeApple()
-        addChild(newApple)
+       let aMask = contact.bodyA.categoryBitMask
+       let bMask = contact.bodyB.categoryBitMask
+
+       switch (aMask, bMask) {
+       case (CategoryBitMasks.apple.rawValue, CategoryBitMasks.snakeHead.rawValue):
+           snake?.addBodyPart()
+           let apple = contact.bodyA.node
+           apple?.removeFromParent()
+
+           let newApple = makeApple()
+           addChild(newApple)
+       default:
+           break
+       }
     }
 }

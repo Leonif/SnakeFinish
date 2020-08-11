@@ -10,4 +10,5 @@ enum CategoryBitMasks: UInt32 {
     case snakeHead = 10
     case snakeBodyPart = 20
     case apple = 30
+    case edgeBody = 0
 }

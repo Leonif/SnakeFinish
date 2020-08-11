@@ -28,6 +28,7 @@ class Apple: SKShapeNode {
         
         let physicsCenter = CGPoint(x: diameter / 2, y: diameter / 2)
         physicsBody = SKPhysicsBody(circleOfRadius: 10, center: physicsCenter)
+        physicsBody?.categoryBitMask = CategoryBitMasks.apple.rawValue
         
     }
 }
